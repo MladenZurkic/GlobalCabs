@@ -45,7 +45,6 @@ export class FrontpageComponent {
       return;
     }
     if (this.paymentMethod == 'card') {
-      console.log(this.cardNumber.length, this.expirationDate, new Date());
       if (isNaN(parseInt(this.cardNumber)) || this.cardNumber.length !== 16) {
         showErrorMessage('Invalid card number');
         return;
@@ -61,7 +60,6 @@ export class FrontpageComponent {
     //used to get the distance between two locations
     if (this.API_KEY !== '') {
       urlTemplate = `https://api.distancematrix.ai/maps/api/distancematrix/json?origins=${this.startingAddress}&destinations=${this.destinationAddress}&key=${this.API_KEY}`;
-      console.log(urlTemplate);
     }
 
     //default price is 500 if API key is invalid
@@ -80,7 +78,6 @@ export class FrontpageComponent {
     (async () => {
       try {
         const res = await lastValueFrom(this.http.get(urlTemplate));
-        console.log(res);
         if (res['rows'][0]['elements'][0]['status'] == 'ZERO_RESULTS') {
           this.message = 'Invalid address';
           setTimeout(() => {
@@ -94,14 +91,12 @@ export class FrontpageComponent {
         this.reservationSubmitted = true;
 
         const createRideResponse = await lastValueFrom(this.http.post(`${this.backendUrl}/rides/createRide`, rideData));
-        console.log(createRideResponse);
       } catch (err) {
+        console.log(err);
         //Error handling
         //If API key is invalid, the estimated price will be 500 and it will still create the ride
-        console.log(err);
         this.reservationSubmitted = true;
         const createRideResponse = await lastValueFrom(this.http.post(`${this.backendUrl}/rides/createRide`, rideData));
-        console.log(createRideResponse);
       }
     })();
   }

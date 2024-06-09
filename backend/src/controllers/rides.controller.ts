@@ -3,8 +3,6 @@ import RideModel from "../models/ride";
 
 export class RidesController {
   createRide = async (req: express.Request, res: express.Response) => {
-    console.log(req.body);
-    console.log("dosao sam");
     try {
       const ride = new RideModel(req.body);
       await ride.save();

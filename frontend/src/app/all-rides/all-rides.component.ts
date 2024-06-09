@@ -29,15 +29,6 @@ export class AllRidesComponent implements OnInit {
   }
 
   displayRideDetails(ride: any) {
-    /*
-        firstValueFrom(this.http.get(`http://localhost:4000/rides/getRide/${ride._id}`))
-      .then((data: any) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }*/
     this.dataService.setSelectedRide(ride);
     this.router.navigate(['/ride']);
   }

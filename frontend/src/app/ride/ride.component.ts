@@ -20,7 +20,6 @@ export class RideComponent implements OnInit {
     this.dataService.rideObservable$.subscribe((ride) => {
       if (ride) {
         this.ride = ride;
-        console.log(this.ride);
       }
     });
   }
