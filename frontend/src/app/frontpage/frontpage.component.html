@@ -1,1 +1,65 @@
-<p>frontpage works!</p>
+<h1>GlobalCabs</h1>
+<div class="navbar-container">
+  <app-navbar></app-navbar>
+</div>
+<div class="reservation-container">
+  <h2>Reserve a Ride</h2>
+  <br />
+  9
+  <form #reservationForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="startingAddress">Starting Address:</label>
+      <input type="text" class="form-input" id="startingAddress" name="startingAddress" [(ngModel)]="startingAddress" placeholder="Start" required />
+    </div>
+
+    <div class="form-group">
+      <label for="destinationAddress">Destination Address:</label>
+      <input type="text" class="form-input" id="destinationAddress" name="destinationAddress" [(ngModel)]="destinationAddress" placeholder="Destination" required />
+    </div>
+
+    <div class="form-group">
+      <label for="dateTime">Date & Time:</label>
+      <input type="datetime-local" class="form-input" id="dateTime" name="dateTime" [(ngModel)]="date" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="tel" class="form-input" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" placeholder="+381 65 111 1111" required />
+    </div>
+
+    <div class="form-group">
+      <label>Payment Method:</label>
+      <div class="payment-options">
+        <label class="payment-option">
+          <input type="radio" name="payment" value="cash" [(ngModel)]="paymentMethod" required />
+          Cash
+        </label>
+        <label class="payment-option">
+          <input type="radio" name="payment" value="card" [(ngModel)]="paymentMethod" required />
+          Card
+        </label>
+      </div>
+    </div>
+
+    <div *ngIf="paymentMethod === 'card'" class="form-group">
+      <label for="cardNumber">Card Number:</label>
+      <input type="string" class="form-input" id="cardNumber" name="cardNumber" [(ngModel)]="cardNumber" placeholder="1234 5678 9123 4567" required />
+    </div>
+    <div *ngIf="paymentMethod === 'card'" class="form-group">
+      <label for="expirationDate">Expiration Date:</label>
+      <input type="month" class="form-input" id="expirationDate" name="expirationDate" [(ngModel)]="expirationDate" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!reservationForm.valid">Reserve a Taxi</button>
+
+    <br />
+    <br />
+    <div *ngIf="message">
+      <p class="error-message">{{ message }}</p>
+    </div>
+    <div class="reservation-message" *ngIf="reservationSubmitted">
+      <p>Estimated Price: {{ estimatedPrice }} RSD</p>
+      <p>Your ride is reserved!</p>
+    </div>
+  </form>
+</div>

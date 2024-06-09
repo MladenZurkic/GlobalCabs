@@ -1,0 +1,101 @@
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font: 400 50px/1.5 'Roboto', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.reservation-container {
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  font-family: 'Roboto', 'Arial', 'Helvetica Neue', sans-serif;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 12px 15px;
+  font-size: 16px;
+}
+
+.form-input:focus {
+  border-color: #3399ff;
+  outline: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 16px;
+  font: 400 16px/1.5 'Roboto', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+.btn-primary {
+  background-color: #bd35d5;
+  border-color: #c62edb;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:disabled {
+  background-color: #856e88;
+  border-color: #856e88;
+  color: #bdbdbd;
+}
+
+.payment-options {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.payment-option:hover {
+  background-color: #e0e0e0;
+  border-color: #888;
+}
+
+.payment-option input[type='radio'] {
+  margin-right: 8px;
+  margin-bottom: 4px;
+  vertical-align: middle;
+}
+
+.error-message {
+  color: #d9534f;
+}
+
+.navbar-container {
+  margin: auto;
+  width: 70%;
+}

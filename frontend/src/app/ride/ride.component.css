@@ -1,0 +1,43 @@
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font: 400 50px/1.5 'Roboto', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+.info-container {
+  width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  font-family: 'Roboto', 'Arial', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  font-size: 20px;
+}
+
+.element-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.single-container {
+  margin: auto;
+  width: 50%;
+}
+
+input {
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-container {
+  margin: auto;
+  width: 70%;
+}

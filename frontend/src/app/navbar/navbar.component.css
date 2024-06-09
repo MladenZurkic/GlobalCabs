@@ -1,0 +1,30 @@
+.nav-bar {
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar li {
+  margin: 0 1rem;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+}
+
+.nav-bar a:hover {
+  text-decoration: underline;
+}

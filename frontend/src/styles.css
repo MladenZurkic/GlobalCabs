@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+.background-gradient {
+  background: linear-gradient(90deg, #ff4d8e 0%, #8f55a1 100%);
+}
