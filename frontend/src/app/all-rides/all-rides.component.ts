@@ -16,10 +16,11 @@ import { DataService } from '../data.service';
 export class AllRidesComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, private dataService: DataService) {}
 
+  backendUrl = 'http://localhost:4000';
   rides: any[];
 
   ngOnInit(): void {
-    firstValueFrom(this.http.get('http://localhost:4000/rides/getRide'))
+    firstValueFrom(this.http.get(`${this.backendUrl}/rides/getRide`))
       .then((data: any) => {
         this.rides = data;
       })
