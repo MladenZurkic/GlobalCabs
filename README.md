@@ -1,7 +1,7 @@
 
 ## GlobalCabs: Ride Reservation System
 
-This project, developed for Globalkom, provides a user interface for reserving rides with GlobalCabs taxi service.
+This project, developed for Globalkom, provides a user interface for reserving rides.
 
 ### Features:
 
